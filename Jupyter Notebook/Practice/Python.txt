@@ -1,0 +1,65 @@
+1. What is Python?
+   Python is a high-level, interpreted, interactive, and object-oriented scripting language. Python is designed to be highly readable.
+
+2.Differentiate between lists and tuples.
+   The major difference is that a list is mutable, but a tuple is immutable.
+
+3.How would you convert a string into lowercase?
+   The lower() method is used to convert a sting into lowercase.
+
+4.How are arguments passed by value or by reference?
+   Everything in Python is an object and all variables hold references to the objects. 
+
+5.How you can convert a number to a string?
+   In order to convert a number into a string, use the inbuilt function str().
+
+6. How to delete a file in Python?
+    By using a command os.remove (filename) or os.unlink(filename)
+
+7.How do you make use of Arrays in Python?
+    Python does not support Arrays. List collection type which can store an unlimited number of element
+
+8.Which data types are supported in Python?
+   Python has five standard data types:
+	Numbers
+	Strings
+	Lists
+	Tuples
+	Dictionaries
+
+9.How will you reverse a list in Python?
+   The function list.reverse() reverses the objects of a list.
+
+10.What is __init__ in Python?
+    The __init__ method is called automatically whenever a new object is initiated. This method allocates memory to the new object as soon as it is created. This method can also be used to initialize variables.
+
+11.What type of language is Python? Programming or Scripting?
+    Python is suitable for scripting, but in general it is considered as a general-purpose programming language.
+
+12.What is PEP 8?
+    PEP 8 is the Python latest coding convention and it is abbreviated as Python Enhancement Proposal. It is all about how to format your Python code for maximum readability.
+
+13.Define modules in Python?
+    Module is defined as a file that includes a set of various functions and Python statements that we want to add in our application. 
+
+14.What are Python Decorators?
+    Decorator is the most useful tool in Python as it allows programmers to alter the changes in the behavior of class or function. 
+
+15.How do you create a Python function?
+    Functions are defined using the def statement.
+    example def foo(bar):
+
+16.Define slicing in Python?
+   Slicing is a procedure used to select a particular range of items from sequence types such as Strings, lists, and so on.
+
+17.Define package in Python?
+    In Python packages are defined as the collection of different modules.
+
+18.How do you copy an object in Python?
+    To copy objects in Python we can use methods called copy.copy() or copy.deepcopy().
+
+19.How would you declare a comment in Python?
+    Python does not have multiline comments. Anything following a hash is considered a comment, and the interpreter ignores it.
+
+20.What is self in Python?
+    Self is a keyword in Python used to define an instance or an object of a class. In Python, it is explicity used as the first paramter, unlike in Java where it is optional. It helps in disinguishing between the methods and attributes of a class from its local variables
