@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../LearnBDD/.idea/LearnBDD.iml" filepath="$PROJECT_DIR$/../LearnBDD/.idea/LearnBDD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LearnSelenium/.idea/LearnSelenium.iml" filepath="$PROJECT_DIR$/../LearnSelenium/.idea/LearnSelenium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../TestLeaf/Learn_Flask/.idea/Learn_Flask.iml" filepath="$PROJECT_DIR$/../../TestLeaf/Learn_Flask/.idea/Learn_Flask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PracticePython.iml" filepath="$PROJECT_DIR$/.idea/PracticePython.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,4 +1,5 @@
 import openpyxl
+
 wb = openpyxl.load_workbook('C:\\Users\\gurur\\PycharmProjects\\Learn_Python\\ExcelData\\TestLeaf.xlsx')
 # print(wb.sheetnames)
 # Find active sheet name
@@ -20,11 +21,11 @@ column = sh.max_column
 for eachrow in sh['A2':'D5']:
     for cells in eachrow:
         print(cells.value)
-print('*'*30)
+print('*' * 30)
 
 # Way2
-for row in range(2,row+1):
-    for cells in range(1,column+1):
-        val = sh.cell(row,cells)
+for row in range(2, row + 1):
+    for cells in range(1, column + 1):
+        val = sh.cell(row, cells)
         print(val.value)
-print('*'*30)
+print('*' * 30)

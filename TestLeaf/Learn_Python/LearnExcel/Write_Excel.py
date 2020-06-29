@@ -1,4 +1,5 @@
 from openpyxl import Workbook
+
 # Create object for Workbook
 wb = Workbook()
 
@@ -11,8 +12,8 @@ sh.title = "pythondetails"
 # Write Values
 sh['A1'].value = "TestLeaf"
 # sh['B1'].value = "Mentors"
-sh.append(['1','2','3'])
-sh.append(['1','2','3'])
+sh.append(['1', '2', '3'])
+sh.append(['1', '2', '3'])
 
 # Saving the file
 wb.save('C:\\Users\\gurur\\PycharmProjects\\Learn_Python\\ExcelData\\WriteExcel.xlsx')
