@@ -11,3 +11,4 @@ for ch in s:
         prev=ch
         output=output+str(c)+prev
 print(output)
+
