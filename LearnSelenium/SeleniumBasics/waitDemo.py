@@ -3,6 +3,7 @@
 import time
 
 from selenium import webdriver
+
 #pause the test for few seconds using Time class
 driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
 driver.implicitly_wait(5)
@@ -25,6 +26,3 @@ driver.find_element_by_xpath("//button[text()='PROCEED TO CHECKOUT']").click()
 driver.find_element_by_class_name("promoCode").send_keys("rahulshettyacademy")
 driver.find_element_by_css_selector(".promoBtn").click()
 print(driver.find_element_by_css_selector("span.promoInfo").text)
-
-
-

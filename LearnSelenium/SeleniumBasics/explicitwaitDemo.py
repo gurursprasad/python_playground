@@ -3,14 +3,14 @@
 import time
 
 from selenium import webdriver
-#pause the test for few seconds using Time class
+# pause the test for few seconds using Time class
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 list = []
 list2 = []
-driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
+driver = webdriver.Chrome(executable_path="E:\\Projects\\Browser Drivers\\chromedriver.exe")
 
 driver.get("https://rahulshettyacademy.com/seleniumPractise/")
 driver.find_element_by_css_selector("input.search-keyword").send_keys("ber")
@@ -56,8 +56,3 @@ print(sum)
 totalAmount = int(driver.find_element_by_class_name("totAmt").text)
 
 assert sum == totalAmount
-
-
-
-
-

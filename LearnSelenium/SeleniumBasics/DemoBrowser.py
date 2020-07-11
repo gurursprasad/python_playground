@@ -1,6 +1,6 @@
 from selenium import webdriver
 
-driver = webdriver.Chrome(executable_path="D:\\Python\\Selenium Drivers\\chromedriver.exe")
+driver = webdriver.Chrome(executable_path="E:\\Projects\\Browser Drivers\\chromedriver.exe")
 driver.get("https://rahulshettyacademy.com/")
 print(driver.title)
 print(driver.current_url)
