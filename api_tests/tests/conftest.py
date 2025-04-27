@@ -18,7 +18,3 @@ def session(config):
 @pytest.fixture(scope="session")
 def base_url(config):
     return config["base_url"]
-
-
-
-
