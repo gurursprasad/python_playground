@@ -1,4 +1,5 @@
 import pytest, requests, os
+from jsonschema import validate
 
 
 created_user_id = None
@@ -35,3 +36,17 @@ class Test_User_API:
         assert body["id"] == created_user_id
         assert body["name"] == self.payload["name"]
         assert body["email"] == self.payload["email"]
+
+
+    def test_user_schema(self, session, base_url):
+        resp = session.get(f"{base_url}/users/123")
+        schema = {
+        "type": "object",
+        "properties": {
+            "id": {"type": "integer"},
+            "name": {"type": "string"},
+            "email": {"type": "string", "format": "email"}
+        },
+        "required": ["id", "name", "email"]
+        }
+        validate(instance=resp.json(), schema=schema)
