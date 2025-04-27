@@ -1,0 +1,16 @@
+List data:
+Guru
+Prasad
+
+Tuple data:
+Guru
+Prasad
+
+Set data:
+Guru
+Prasad
+
+Dict
+Guru
+data
+Prasad
