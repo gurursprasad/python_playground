@@ -1,0 +1,293 @@
+Python Interview questions for Beginners
+1. What is the difference between a module and a package?
+    Module: A single .py file containing Python definitions (functions, classes, variables).
+    Package: A directory containing an __init__.py file (can be empty) and one or more modules or subpackages. It lets you organize modules hierarchically.
+
+2. Is Python a compiled language or an interpreted language?
+    Python source is first compiled to bytecode (.pyc), then executed by the Python virtual machine.
+    It’s generally considered an interpreted language because you don’t manually compile it ahead of time—instead the interpreter does it on the fly.
+
+3. What are the benefits of using Python as a tool in the present scenario?
+    Readability & Maintainability: Clean, English-like syntax speeds development and eases hand-offs.
+    Rich Ecosystem: Thousands of libraries (e.g. Requests for HTTP, Boto3 for AWS, Pandas for data).
+    Rapid Prototyping: Fast iteration cycle—ideal for scripting, automation, proof of concept.
+    Cross-Platform: Runs on Linux, Windows, macOS with minimal changes.
+    Community & Support: Vast tutorials, active forums, regular updates.
+
+4. What are global, protected and private attributes in Python?
+    Global: Defined at the module level; accessible anywhere in that module (or via import).
+    Protected (_name): By convention, an attribute prefixed with a single underscore is “internal”—you’re signaling “use at your own risk,” but Python doesn’t enforce it.
+    Private (__name): Double-underscore triggers name mangling (_ClassName__name), making accidental access harder—but not impossible.
+
+5. Is Python case sensitive?
+    Yes. Variable names, function names, class names, and keywords all distinguish between uppercase and lowercase (e.g. Value ≠ value).
+
+6. What is Pandas?
+    A powerful open-source library for data manipulation and analysis.
+    Provides DataFrame (2D tabular data) and Series (1D) with rich methods for filtering, grouping, reshaping, time-series, and I/O.
+
+7. How is Exceptional handling done in Python?
+    try:
+    # code that might raise
+    except SomeError as e:
+        # handle specific error
+    except (ErrorA, ErrorB):
+        # handle multiple errors
+    else:
+        # runs if no exception
+    finally:
+        # always runs (e.g. cleanup)
+
+8. What is the Difference between for loop and while loop in Python?
+    for: Iterates over a sequence (list, tuple, dict, string, generator). Best when you know the iterable.
+    while: Repeats as long as a condition remains true. Use when the number of iterations isn’t predetermined.
+
+9. Is Indentation Required in Python?
+    Yes. Indentation (usually 4 spaces) defines block structure (functions, loops, conditionals). Missing or inconsistent indentation causes IndentationError.
+
+10. What is the use of self in Python?
+    In instance methods, self refers to the object itself. It lets you access and modify instance attributes and call other methods:
+    class MyClass:
+    def __init__(self, value):
+        self.value = value  # assign to the instance
+    def show(self):
+        print(self.value)   # access instance data
+
+
+Python Interview Questions for Intermediate
+11. How does Python manage memory? Explain the role of reference counting & garbage collection.
+    Reference Counting: Every object has a counter of how many references point to it. When this count drops to zero, the object’s memory is immediately deallocated.
+    Garbage Collector: Handles cyclic references (e.g. two objects referencing each other) that reference counting alone can’t free. Python’s gc module periodically scans for unreachable cycles and frees them.
+
+12. Does Python support multiple Inheritance?
+    Yes. A class can inherit from more than one parent:
+    class A: …
+    class B: …
+    class C(A, B): …
+
+13. How is memory management done in Python?
+    Python manages memory in a private heap, with a dedicated allocator (PyMalloc) for small objects. The interpreter handles allocation/deallocation for you via reference counting plus the cyclic GC.
+
+14. How to delete a file using Python?
+    import os
+    os.remove('path/to/file.txt')    # or os.unlink()
+
+15. Which sorting technique is used by sort() and sorted() functions of python?
+    Both use Timsort, a hybrid, adaptive, stable sort derived from merge sort and insertion sort, optimized for real-world data.
+
+16. Differentiate between List and Tuple?
+    Mutable, immutable
+    Slightly slower	, Slightly faster
+    Cannot use as dict key, Can be used as dict key
+
+17. What is slicing in Python?
+    Extracts a subsequence using seq[start:stop:step].
+    Omitting start defaults to 0; omitting stop goes to end; omitting step defaults to 1.
+    Always returns a new sequence (e.g. new list or tuple).
+
+18. How is multithreading achieved in Python?
+    import threading
+
+    def worker(n):
+        print(f'Working {n}')
+
+    threads = []
+    for i in range(5):
+        t = threading.Thread(target=worker, args=(i,))
+        t.start()
+        threads.append(t)
+    for t in threads:
+        t.join()
+
+19. Which is faster, Python list or Numpy Arrays?
+    Pure Python lists have per-element Python objects, so numeric operations are slow.
+    NumPy arrays store homogeneous data in contiguous memory and delegate operations to optimized C code—much faster for large numeric computations.
+
+20. Explain Inheritance in python?
+    Mechanism by which a class (child/subclass) derives attributes and methods from another (parent/superclass).
+    Promotes code reuse and logical hierarchy
+    class Animal:
+        def eat(self): …
+    class Dog(Animal):
+        def bark(self): …
+
+21. How are classes created in python?
+    class MyClass(BaseClass1, BaseClass2):
+        def __init__(self, args):
+            self.attr = args
+        def method(self):
+            pass
+
+
+22. Write a program to produce Fibonacci series in python
+    def feb():
+        a, b = 0, 1
+        for _ in range(n):
+            print(a,end=" ")
+            a, b = b, a+b
+
+23. What is the difference between shallow copy and deep copy in python?
+    Shallow Copy (copy.copy()): Constructs a new compound object, then (for mutable elements) inserts references to the same items.
+    Deep Copy (copy.deepcopy()): Recursively copies all nested objects, producing fully independent clones.
+
+24. What is the process of compilation and linking in Python?
+    Compilation: Source .py files are compiled to bytecode (.pyc) by the interpreter.
+    Linking: There is no separate linking phase like in C; modules are loaded and bound at runtime by the import machinery.
+
+25. What is break, continue and pass in Python?
+    break: Exit the nearest enclosing loop immediately.
+    continue: Skip the remainder of the loop body and proceed with the next iteration.
+    pass: No-operation placeholder (used when syntax requires a statement but you have nothing to do).
+
+26. What is PEP 8?
+    The official Python Style Guide for code readability. Covers naming conventions, indentation (4 spaces), line length (max 79 chars), imports ordering, etc.
+
+27. What is an Expression?
+    Any combination of literals, variables, operators, and calls that Python can evaluate to a value. E.g. 3 + 4, x * func(y), or [i for i in range(5)].
+
+28. What is == in python?
+    Tests equality between two objects by invoking the __eq__ method. Returns True if the values are considered equal, False otherwise.
+
+29. What is type conversion in Python?
+    Implicit: Python automatically converts types in certain expressions (e.g. 1 + 2.5 → 3.5).
+    Explicit: Use constructors like int(), float(), str(), list(), etc., to convert values deliberately.
+
+30. Name some commonly used built-in modules in Python?
+    sys, os, math, datetime, re, json, random, itertools, collections, threading, subprocess, logging
+
+
+Advanced Python Interview Questions
+31. What is the difference between xrange and range in functions
+    xrange was removed.
+    range now behaves like Python 2’s xrange (i.e. it returns a lazy sequence object, not a full list).
+
+32. What is the zip function?
+    Takes two or more iterables and returns an iterator of tuples, where the ith tuple contains the ith element from each input.
+    Stops when the shortest input is exhausted.
+    >>> list(zip([1,2,3], ['a','b','c']))
+    [(1,'a'), (2,'b'), (3,'c')]
+
+33. What is Django Architecture?
+34. What is inheritance in Python?
+    A mechanism where a child class derives attributes and methods from a parent class, enabling code reuse and polymorphism.
+    Supports single, multiple, and multi-level inheritance.
+    Use super() to call parent methods:
+    class Parent:
+        def greet(self): print("Hello")
+    class Child(Parent):
+        def greet(self):
+            super().greet()
+            print("Hi from child")
+
+35. Define *args and **kwargs in Python
+    *args collects extra positional arguments as a tuple.
+    **kwargs collects extra keyword arguments as a dict.
+
+36. Do runtime errors exist in Python? Explain with an example.
+    Yes, errors that occur while the program is running (not caught at compile/parse time).
+    
+37. What are docstrings in Python?
+    Triple-quoted strings ("""…""" or '''…''') placed at the top of a module, class, or function to describe its purpose.
+    Accessible via the __doc__ attribute and used by tools like help() and Sphinx.
+
+38. How can you capitalize the first letter of a string in Python?
+    s = "hello"
+    print(s.capitalize())  # "Hello"
+
+    s = "hello"
+    s2 = s[0].upper() + s[1:]
+
+39. What are the generators in Python?
+    Functions that use yield instead of return to produce a sequence of values lazily.
+    They implement the iterator protocol, conserving memory by generating items one at a time.
+    def feb():
+        a,b = 0,1
+        while True:
+            yield a
+            a,b = b,a+b
+            
+    g = feb()
+
+    for x in g:
+        if x<10:
+            print(x)
+        else:
+            break
+
+40. How to write comments in Python?
+    Single-line: start with #.
+    Multi-line: either use several # lines or a triple-quoted string (though the latter is actually a string literal, not a true comment).
+
+41. What is GIL?
+42. Is Django better than flask?
+43. What is flask? Explain its benefits
+44. What is PIP?
+    The Package Installer for Python.
+    Installs packages from PyPI and manages dependencies:
+    pip install requests
+
+45. How can you ensure that your Python code is compatible with both Python2 & Python3?
+46. What is the difference between Modulus Operator %, Division Operator /, Floor Division Operator // ?
+| % | Modulo: returns the remainder of division. |
+| / | True division: returns a float result (even if evenly divisible). |
+| // | Floor division: divides and rounds down to the nearest integer (type int). |
+
+47. Why doesn't Python deallocate all memory upon exit?
+    CPython’s allocator (pymalloc) pools small blocks for efficiency and fragmentation avoidance.
+    Freed memory often stays in these pools for reuse rather than being returned to the OS immediately.
+    At interpreter shutdown, the OS reclaims all process memory automatically.
+
+48. Why is a set known as unordered? Is it mutable or immutable?
+    A set is an unordered collection of unique, mutable elements.
+    You can add/remove items (.add(), .remove()), but the set has no defined order.
+
+49. What is the difference between DataFrames and Series?
+    Series: 1-dimensional labeled array (like a column).
+    DataFrame: 2-dimensional tabular data structure with rows and columns (like a table).
+    A DataFrame is essentially a collection of Series that share the same index.
+
+50. What does len() do?
+    Returns the number of items in a container (string, list, tuple, dict, etc.).
+_______________________________________________________________________________________________________________________
+
+Python Interview Questions for Freshers (Basic Level Python Interview Questions):
+1. What makes Python different from other languages?
+2. What do you mean by Python being an Interpreted language?
+3. Give three differences between lists and tuples.
+4. Differentiate between mutable and immutable data types
+5. What is the difference between slicing and indexing?
+6. Explain list comprehension
+7. What is the difference between break and continue?
+8. What is the pass statement?
+9. What do you understand by scope?
+10. What are negative indexes and why are they used?
+
+
+Intermediate Level Python Interview Questions:
+11. How do you copy an object in Python?
+12. What do *args and **kwargs mean?
+13. How are arguments passed by value or by reference in Python?
+14. What is lambda in Python? Why is it used?
+15. Explain exceptional handling.
+16. How is memory managed in Python?
+17. Differentiate between Sorted vs sort
+18. What is compile time and runtime error? Do they exist in Python?
+19. What are generators and decorators?
+
+
+Advanced Python Developer Interview Questions and Answers:
+20. What is the difference between abstraction and encapsulation?
+21. What is method overriding? How is it different from method overloading?
+22. How does inheritance work in Python?
+23. What is the significance of self in Python classes?
+24. What are class methods and static methods? How are they different from instance methods?
+25. Explain the differences between a set and a dictionary.
+26. What is the time complexity of inserting elements in a Linked List?
+27. How do you find the middle element of a linked list in one pass?
+
+
+Advanced Python Coding Interview Questions
+
+28. Longest Common Substring
+29. 0/1 Knapsack Problem
+30. Asteroid Collision Problem
